@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>HowTo Use jCalendar</title>
+		<link rel="stylesheet" href="CSS/jCalendar.css" type="text/css" media="screen"/>
+		<script type="text/javascript" src="Scripts/Calendar.js"></script>
+		<style>
+			h1 {color: #365f91; font-family: Cambria;}
+			h2 {color: #4f81bd; font-family: Cambria; margin-left: 25px}
+			h3 {color: #4f81bd; font-family: Cambria; margin-left: 50px}
+			p {font-family: sans-serif; color: #002060;}
+			code {font-size: 1.1rem; font-weight: bold; color: #2e900c;}
+			ul {font-family: sans-serif; color: #002060;}
+		</style>
+	</head>
+	<body>
+		<h1>
+			HowTo install and use jCalendar
+		</h1>
+		
+		<h2>
+			Step 1 : Extract file from zip file
+		</h2>
+		
+		<p>
+			jCalendar is composed of one CSS file and one script file. These files are present in the archive file.
+		</p>
+		
+		<h2>
+			Step 2 : Include files in your project
+		</h2>
+		
+		<h3>
+			Include the CSS File
+		</h3>
+		
+		<p>
+			Add this following code line in the head section :
+		</p>
+		
+		<code>
+			&lt;link rel="stylesheet" href="CSS/jCalendar.css" type="text/css" media="screen"&gt;
+		</code>
+		
+		<h3>
+			Include the Script File
+		</h3>
+		
+		<p>
+			Add this following code line in the head section :
+		</p>
+		
+		<code>
+			&lt;script type="text/javascript" src="Scripts/jCalendar.js"&gt;&lt;/script&gt;
+		</code>
+		
+		<h2>
+			Step 3 : How to use in your HTML page
+		</h2>
+		
+		<p>
+			To create a new input that working with jCalendar class, you have to define the input type to "jCalendar".
+		</p>
+		
+		<code>
+			&lt;input type="jCalendar" /&gt;
+		</code>
+		
+		<p>
+			Input render => <input type="jCalendar" />
+		</p>
+		
+		<p>
+			Nota :
+		</p>
+		
+		<ul>
+			<li>You can define a function to the onchange event. The jCalendar class will triggers the linked function when you set a new date</li>
+			<li>You can use the "placeholder" attribute.</li>
+			<li>Actually, the input is define to "readonly"</li>
+		</ul>
+	</body>
+</html>

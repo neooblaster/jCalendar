@@ -1,0 +1,140 @@
+/** -------------------------------------------------------------------------------------------------------------------- ** 
+/** -------------------------------------------------------------------------------------------------------------------- ** 
+/** ---																																					--- **
+/** --- 											-----------------------------------------------											--- **
+/** ---														{ common.global_screen.less }														--- **
+/** --- 											-----------------------------------------------											--- **
+/** ---																																					--- **
+/** ---		MEDIA 	: SCREEN																														--- **
+/** ---																																					--- **
+/** ---		AUTEUR 	: Nicolas DUPRE																											--- **
+/** ---																																					--- **
+/** ---		RELEASE	: 22.04.2016																												--- **
+/** ---																																					--- **
+/** ---																																					--- **
+/** --- 														---------------------------														--- **
+/** ---															{ S C O P E   C S S }															--- **
+/** --- 														---------------------------														--- **
+/** ---																																					--- **
+/** ---		>	Configuration graphique du calendrier jCalendar																			--- **
+/** ---																																					--- **
+/** -------------------------------------------------------------------------------------------------------------------- **
+/** -------------------------------------------------------------------------------------------------------------------- **/
+#jCalendar {
+  position: absolute;
+  z-index: 99999;
+  width: 264px;
+  padding: 10px;
+  background: white;
+  border: 1px solid #bfbfbf;
+  font-family: sans-serif;
+}
+#jCalendar #jCalendar_head {
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 24px;
+}
+#jCalendar #jCalendar_head > div {
+  position: absolute;
+  height: 24px;
+  cursor: pointer;
+}
+#jCalendar #jCalendar_head > div:not(#jCalendar_head_date) {
+  width: 24px;
+  background: url('../Images/jCalendar_buttons.png');
+  box-shadow: 1px 1px 1px #dfdfdf;
+}
+#jCalendar #jCalendar_head > div#jCalendar_head_prev {
+  right: 112px;
+}
+#jCalendar #jCalendar_head > div#jCalendar_head_prev:hover {
+  background-position: 0px -24px;
+}
+#jCalendar #jCalendar_head > div#jCalendar_head_now {
+  right: 84px;
+  background-position: -24px 0px;
+}
+#jCalendar #jCalendar_head > div#jCalendar_head_now:hover {
+  background-position: -24px -24px;
+}
+#jCalendar #jCalendar_head > div#jCalendar_head_next {
+  right: 56px;
+  background-position: -48px 0px;
+}
+#jCalendar #jCalendar_head > div#jCalendar_head_next:hover {
+  background-position: -48px -24px;
+}
+#jCalendar #jCalendar_head > div#jCalendar_head_clear {
+  right: 28px;
+  background-position: -72px 0px;
+}
+#jCalendar #jCalendar_head > div#jCalendar_head_clear:hover {
+  background-position: -72px -24px;
+}
+#jCalendar #jCalendar_head > div#jCalendar_head_close {
+  right: 0px;
+  background-position: -96px 0px;
+}
+#jCalendar #jCalendar_head > div#jCalendar_head_close:hover {
+  background-position: -96px -24px;
+}
+#jCalendar #jCalendar_head > div#jCalendar_head_date {
+  width: calc(100% - 120px - 20px);
+  left: 0;
+  line-height: 24px;
+  text-align: center;
+  background-image: url('../Images/jCalendar_switch_viewStd.png');
+  background-repeat: no-repeat;
+  background-position: 0 7px;
+  color: #244061;
+  font-size: 15px;
+  text-indent: 12px;
+}
+#jCalendar #jCalendar_head > div#jCalendar_head_date:hover {
+  background-image: url('../Images/jCalendar_switch_viewHvr.png');
+  color: #4d90fe;
+}
+#jCalendar #jCalendar_content {
+  position: relative;
+  width: 262px;
+  border: 1px solid #4d90fe;
+}
+#jCalendar #jCalendar_content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#jCalendar #jCalendar_content table tr th {
+  font-weight: normal;
+  font-size: 13px;
+  color: black;
+  padding: 2px;
+}
+#jCalendar #jCalendar_content table tr th.jtoday {
+  font-weight: bold;
+  color: #de2424;
+}
+#jCalendar #jCalendar_content table tr th.jselected {
+  background: #bccdec;
+}
+#jCalendar #jCalendar_content table#weeksView tr:first-child th {
+  background: #f5f5f5;
+  color: black;
+  border-bottom: 1px solid #bfbfbf;
+  padding: 5px 1px;
+}
+#jCalendar #jCalendar_content table#weeksView tr:not(:first-child) th:not(.jvoid) {
+  cursor: pointer;
+}
+#jCalendar #jCalendar_content table#weeksView tr:not(:first-child) th:not(.jvoid):not(.jselected):hover {
+  background: #e5ecf8;
+}
+#jCalendar #jCalendar_content table#monthsView tr th,
+#jCalendar #jCalendar_content table#yearsView tr th {
+  padding: 8px 0;
+  cursor: pointer;
+}
+#jCalendar #jCalendar_content table#monthsView tr th:not(.jselected):hover,
+#jCalendar #jCalendar_content table#yearsView tr th:not(.jselected):hover {
+  background: #e5ecf8;
+}

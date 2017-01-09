@@ -1,0 +1,213 @@
+/** -------------------------------------------------------------------------------------------------------------------- ** 
+/** -------------------------------------------------------------------------------------------------------------------- ** 
+/** ---																																					--- **
+/** --- 											-----------------------------------------------											--- **
+/** ---														{ common.global_screen.less }														--- **
+/** --- 											-----------------------------------------------											--- **
+/** ---																																					--- **
+/** ---		MEDIA 	: SCREEN																														--- **
+/** ---																																					--- **
+/** ---		AUTEUR 	: Nicolas DUPRE																											--- **
+/** ---																																					--- **
+/** ---		RELEASE	: 22.04.2016																												--- **
+/** ---																																					--- **
+/** ---																																					--- **
+/** --- 														---------------------------														--- **
+/** ---															{ S C O P E   C S S }															--- **
+/** --- 														---------------------------														--- **
+/** ---																																					--- **
+/** ---		>	Configuration graphique du calendrier jCalendar																			--- **
+/** ---																																					--- **
+/** -------------------------------------------------------------------------------------------------------------------- **
+/** -------------------------------------------------------------------------------------------------------------------- **
+
+
+/** -------------------------------------------------------------------------------------------------------------------- **
+/** -------------------------------------------------------------------------------------------------------------------- **
+/** ---																																					--- **
+/** ---															Déclaration des variables														--- **
+/** ---																																					--- **
+/** -------------------------------------------------------------------------------------------------------------------- **
+/** -------------------------------------------------------------------------------------------------------------------- **/
+//@images_path: "../../Images";
+@images_path: "../Images";
+
+@main_background_color: white;
+
+@main_border_color: #bfbfbf;
+@main_border_width: 1px;
+@main_border_style: solid;
+
+@inner_border_color: #4d90fe;
+@inner_border_width: 1px;
+@inner_border_style: solid;
+
+@days_background: #f5f5f5;
+@days_hover_background: #e5ecf8;
+@days_active_background: #bccdec;
+@days_color: black;
+@days_today_color: #de2424;
+
+@font-family: sans-serif;
+@font-color: black;
+
+@title_color: #244061;
+@title_hover_color: #4d90fe;
+
+
+
+
+/** -------------------------------------------------------------------------------------------------------------------- **
+/** -------------------------------------------------------------------------------------------------------------------- **
+/** ---																																					--- **
+/** ---										Configuration graphique du calendrier jCalendar 											--- **
+/** ---																																					--- **
+/** -------------------------------------------------------------------------------------------------------------------- **
+/** -------------------------------------------------------------------------------------------------------------------- **/
+#jCalendar {
+	position: absolute;
+	z-index: 99999;
+	width: 264px;
+	padding: 10px;
+	background: @main_background_color;
+	border: @main_border_width @main_border_style @main_border_color;
+	font-family: @font-family;
+	
+	#jCalendar_head {
+		position: relative;
+		margin-bottom: 10px;
+		width: 100%;
+		height: 24px;
+		
+		& > div {
+			position: absolute;
+			height: 24px;
+			cursor: pointer;
+			
+			&:not(#jCalendar_head_date){
+				width: 24px;
+				background: url('@{images_path}/jCalendar_buttons.png');
+				box-shadow: 1px 1px 1px #dfdfdf;
+			}
+			&#jCalendar_head_prev {
+				right: 112px;
+				&:hover {
+					background-position: -0px -24px;
+				}
+			}
+			&#jCalendar_head_now {
+				right: 84px;
+				background-position: -24px 0px;
+				&:hover {
+					background-position: -24px -24px;
+				}
+			}
+			&#jCalendar_head_next {
+				right: 56px;
+				background-position: -48px 0px;
+				&:hover {
+					background-position: -48px -24px;
+				}
+			}
+			&#jCalendar_head_clear {
+				right: 28px;
+				background-position: -72px 0px;
+				&:hover {
+					background-position: -72px -24px;
+				}
+			}
+			&#jCalendar_head_close {
+				right: 0px;
+				background-position: -96px 0px;
+				&:hover {
+					background-position: -96px -24px;
+				}
+			}
+			&#jCalendar_head_date {
+				width: calc(~"100% - 120px - 20px");
+				left: 0;
+				line-height: 24px;
+				text-align: center;
+				background-image: url('@{images_path}/jCalendar_switch_viewStd.png');
+				background-repeat: no-repeat;
+				background-position: 0 7px;
+				color: @title_color;
+				font-size: 15px;
+				text-indent: 12px;
+				
+				&:hover {
+					background-image: url('@{images_path}/jCalendar_switch_viewHvr.png');
+					color: @title_hover_color;
+				}
+			}
+		}
+	}
+	#jCalendar_content {
+		position: relative;
+		width: 262px;
+		border: @inner_border_width @inner_border_style @inner_border_color;
+		
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			
+			tr {
+				th {
+					font-weight: normal;
+					font-size: 13px;
+					color: @font-color;
+					padding: 2px;
+					
+					&.jtoday {
+						font-weight: bold;
+						color: @days_today_color;
+					}
+					&.jselected {
+						background: @days_active_background;
+					}
+					&.jvoid {
+						
+					}
+				}
+			}
+			
+			&#weeksView {
+				tr {
+					&:first-child{
+						th {
+							background: @days_background;
+							color: @days_color;
+							border-bottom: 1px solid @main_border_color;
+							padding: 5px 1px;
+						}
+					}
+					&:not(:first-child){
+						th:not(.jvoid) {
+							cursor: pointer;
+							
+							&:not(.jselected){
+								&:hover {
+									background: @days_hover_background;
+								}
+							}
+						}
+					}
+				}
+			}
+			&#monthsView, &#yearsView {
+				tr {
+					th {
+						padding: 8px 0;
+						cursor: pointer;
+							
+						&:not(.jselected){
+							&:hover {
+								background: @days_hover_background;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
