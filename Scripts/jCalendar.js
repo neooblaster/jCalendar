@@ -7,9 +7,9 @@
 /** ---																																						---
 /** ---		AUTEUR 	: Nicolas DUPRE																												---
 /** ---																																						---
-/** ---		RELEASE	: 20.10.2016																													---
+/** ---		RELEASE	: 09.01.2017																													---
 /** ---																																						---
-/** ---		VERSION	: 3.2.1																															---
+/** ---		VERSION	: 3.2.2																															---
 /** ---																																						---
 /** ---																																						---
 /** --- 														-----------------------------															---
@@ -21,11 +21,15 @@
 /** ---			- [Ajout de la fermeture du calendrier sur une tabulation]																---
 /** ---																																						---
 /** ---																																						---
+/** ---		VERSION 3.2.2 : 09.01.2017																												---
+/** ---		--------------------------																												---
+/** ---			-  Insensibilisation du paramètre "default_language" :																	---
+/** ---				>  Application de la methode toLowerCase() lors de l'utilisation de ce parametre 							---
+/** ---																																						---
 /** ---		VERSION 3.2.1 : 20.10.2016																												---
 /** ---		--------------------------																												---
 /** ---			- Modification des déclenchements des évenements:																			---
 /** ---				Utilisation de l'objet Event+dispatchEvent au lieu de la propriété concernée									---
-/** ---																																						---
 /** ---																																						---
 /** ---		VERSION 3.2 : 31.08.2016																												---
 /** ---		------------------------																												---
@@ -712,7 +716,7 @@ function jCalendar(target){
 		attributes: {
 			focus_after_select: ((fas === 'true' || fas === undefined || fas === '') ? true : false),
 			id: jCalendarId,
-			lang: ((lang === undefined) ? jCalendar_config.default_language : (self.availLang.lastIndexOf(lang.toLowerCase()) > -1) ? lang.toLowerCase() : jCalendar_config.default_language),
+			lang: ((lang === undefined) ? jCalendar_config.default_language.toLowerCase() : (self.availLang.lastIndexOf(lang.toLowerCase()) > -1) ? lang.toLowerCase() : jCalendar_config.default_language.toLowerCase()),
 			offsetTop: ((att_offsetTop !== undefined && parseInt(att_offsetTop) !== NaN) ? parseInt(att_offsetTop) : 0),
 			offsetLeft: ((att_offsetLeft !== undefined && parseInt(att_offsetLeft) !== NaN) ? parseInt(att_offsetLeft) : 0)
 		}

@@ -111,17 +111,19 @@
 			Input with onclick invocation to jcalendar
 		</h1>
 		
-		<input type="jCalendar" lang="en-en" offsetTop="10" offsetLeft="20" focus-after-select="true"/>
+		<input type="jCalendar" offsetTop="10" offsetLeft="20" focus-after-select="true" value="default"/>
 		
-		<input type="jCalendar" lAng="fr-fr" onchange="console.log('date changed');"/>
+		<input type="jCalendar" lang="en-en" offsetTop="10" offsetLeft="20" focus-after-select="true" value="en-en"/>
 		
-		<input type="jCalendar" laNg="de-de" />
+		<input type="jCalendar" lAng="fr-fr" value="fr-fr" onchange="console.log('date changed');"/>
 		
-		<input type="jCalendar" lanG="ru-ru" />
+		<input type="jCalendar" laNg="de-de" value="de-de"/>
 		
-		<input type="jCalendar" LANG="it-it" />
+		<input type="jCalendar" lanG="ru-ru" value="ru-ru"/>
 		
-		<input type="jCalendar" LaNG="es-es" />
+		<input type="jCalendar" LANG="it-it" value="it-it"/>
+		
+		<input type="jCalendar" LaNG="es-es" value="es-es"/>
 		
 	</body>
 </html>
